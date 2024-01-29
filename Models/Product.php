@@ -22,5 +22,7 @@ class Product{
         return $this->name . ', ' . $this->description . ', ' . $this->imageUrl . ' ' . $this->isInStock . ' ' . $this->quantity . ' ' . $this->category->name;
     }
 
-
+    public function getAdditionalInfo(){
+        return false;
+    }
 }

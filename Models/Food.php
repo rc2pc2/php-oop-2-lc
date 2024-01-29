@@ -19,4 +19,8 @@ class Food extends Product{
     public function getCalories(): int{
         return round($this->calories);
     }
+
+    public function getAdditionalInfo(){
+        return 'Calories: '. $this->calories;
+    }
 }

@@ -71,22 +71,15 @@ $products = [
                             <p class="card-text">
                                 <?php echo $product->description; ?>
                             </p>
-                            <p>
-                                Tutte le caratteristiche:
-                                <ul>
-                                <?php  foreach ($product as $chiave => $valore) {
-                                    // var_dump($valore);
-                                    if (is_a($valore, 'Category')){ ?>
-                                        <li>
-                                            <?php echo $chiave; ?>: <?php echo $valore->name; ?>
-                                        </li>
-                                    <?php } else { ?>
-                                        <li>
-                                            <?php echo $chiave; ?>: <?php echo $valore; ?>
-                                        </li>
-                                <?php }} ?>
-                                </ul>
-                            </p>
+
+                            <?php if ($product->getAdditionalInfo()){ ?>
+                                <p>
+                                    Additional info:
+                                    <br>
+
+                                    <?php echo $product->getAdditionalInfo(); ?>
+                                </p>
+                            <?php } ?>
                             <a href="#" class="btn btn-primary">
                                 Acquista per soli <?php echo $product->price; ?>&euro;
                             </a>

@@ -9,4 +9,9 @@ class Kennel extends Product{
         parent::__construct($_name, $_description, $_price, $_imageUrl, $_isInStock, $_quantity, $_category);
         $this->size = $_size;
     }
+
+
+    public function getAdditionalInfo(){
+        return 'Kennel size: '. $this->size;
+    }
 }
